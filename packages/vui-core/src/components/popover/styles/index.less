@@ -1,0 +1,61 @@
+@import "./_variables.less";
+
+.vui-popover {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: @popover-font-color;
+  background-color: @popover-bg-color;
+  border-radius: @popover-border-radius;
+  box-shadow: 0 0 3px 1px @popover-shadow-color;
+  z-index: @popover-z-index;
+
+  &__arrow {
+    position: absolute;
+    width: 0;
+    height: 0;
+
+    &--up {
+      border-left: @popover-border-width solid transparent;
+      border-right: @popover-border-width solid transparent;
+      border-bottom: @popover-border-width solid @popover-bg-color;
+      left: 50%;
+      transform: translateX(-50%);
+      top: -@popover-border-width;
+    }
+
+    &--down {
+      border-left: @popover-border-width solid transparent;
+      border-right: @popover-border-width solid transparent;
+      border-top: @popover-border-width solid @popover-bg-color;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -@popover-border-width;
+    }
+
+    &--left {
+      border-top: @popover-border-width solid transparent;
+      border-bottom: @popover-border-width solid transparent;
+      border-right: @popover-border-width solid @popover-bg-color;
+      top: 15px;
+      transform: translateY(-50%);
+      left: -@popover-border-width;
+    }
+
+    &--right {
+      border-top: @popover-border-width solid transparent;
+      border-bottom: @popover-border-width solid transparent;
+      border-left: @popover-border-width solid @popover-bg-color;
+      top: 15px;
+      transform: translateY(-50%);
+      right: -@popover-border-width;
+    }
+  }
+
+  &__content {
+    font-size: 14px;
+    line-height: 1.125em;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+}

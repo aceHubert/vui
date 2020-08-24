@@ -1,0 +1,30 @@
+@import './_variables.less';
+@import '../../../styles/weui/widget/weui-tips/weui-mask.less';
+@import '../../../styles/weui/widget/weui-tips/weui-actionsheet.less';
+
+.vui-actionsheet {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+
+  &__menu {
+    &--primary {
+      color: @actionsheet-label-primary-color;
+    }
+
+    &--warn {
+      color: @actionsheet-label-warn-color;
+    }
+
+    &--default {
+      color: @actionsheet-label-default-color;
+    }
+
+    &--info {
+      color: @actionsheet-label-info-color;
+    }
+
+    &--disabled {
+      color: @actionsheet-label-disabled-color;
+    }
+  }
+}

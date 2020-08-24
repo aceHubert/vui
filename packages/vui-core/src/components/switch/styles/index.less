@@ -1,0 +1,24 @@
+@import './_variables.less';
+@import '../../../styles//weui/widget/weui-cell/weui-form/weui-form_common.less';
+@import '../../../styles/weui/widget/weui-cell/weui-switch.less';
+
+.vui-switch {
+  &:checked {
+    border-color: @switch-checked-border-color;
+    background-color: @switch-checked-bg-color;
+  }
+
+  &--disabled {
+    opacity: @switch-disabled-opacity;
+  }
+
+  &--mini {
+    height: 24px;
+    width: 44px;
+
+    &::after {
+      height: 20px;
+      width: 20px;
+    }
+  }
+}

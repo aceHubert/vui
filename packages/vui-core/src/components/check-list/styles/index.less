@@ -1,0 +1,25 @@
+@import "../../check-icon/styles/_variables.less";
+@import "../../../styles/weui/widget/weui-cell/weui-check.less";
+
+.vui-checklist {
+  &--label-left &__item {
+    flex-direction: row-reverse;
+
+    .weui-cell__hd {
+      padding-right: 0;
+    }
+  }
+  &__item {
+    &:active {
+      background-color: inherit;
+    }
+
+    &--disabled {
+      .weui-cell__hd,
+      .weui-cell__bd,
+      .weui-cell__ft {
+        opacity: @checkbox-disabled-opacity;
+      }
+    }
+  }
+}

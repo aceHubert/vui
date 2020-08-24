@@ -1,0 +1,41 @@
+@import './_variables.less';
+
+.vui-image {
+  text-align: center;
+
+  &__placeholder,
+  &__fallback,
+  &__inner {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__inner {
+    max-width: inherit;
+    max-height: inherit;
+    vertical-align: top;
+  }
+
+  &__placeholder {
+    color: @color-text-desc;
+  }
+
+  &__error {
+    color: @color-warn;
+  }
+
+  &--circled &__placeholder,
+  &--circled &__fallback,
+  &--circled &__inner {
+    border-radius: 50%;
+  }
+
+  &--bordered {
+    padding: @image-border-padding;
+    border: 1px solid @image-border-color;
+  }
+
+  &--bordered&--circled{
+    border-radius: 50%;
+  }
+}

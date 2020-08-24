@@ -1,0 +1,16 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    // parcel not support extends, set target to be 'esnext' and let bable to transfer js code
+    "target": "ESNext",
+    "baseUrl": "src",
+    "outDir": "_dist",
+    "declaration": true,
+    // "declarationDir": "types",
+    // "paths": {},
+    "jsx": "preserve",
+    "composite": true
+  },
+  "include": ["src/**/*", "types"],
+  "exclude": ["./dev"]
+}

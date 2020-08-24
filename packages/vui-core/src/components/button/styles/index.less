@@ -1,0 +1,37 @@
+@import './_variables.less';
+@import '../../../styles/weui/widget/weui-button/weui-button.less';
+
+.vui-btn {
+  &--rounded {
+    border-radius: 99px;
+  }
+
+  &--circled + &--circled {
+    margin-top: auto !important;
+    margin-left: @button-global-margin-left;
+  }
+
+  &--circled {
+    padding: 9px;
+    width: auto;
+    line-height: 1 !important;
+    border-radius: 50%;
+    display: inline-block;
+
+    .weui-loading {
+      margin: 0;
+    }
+
+    &[class*=' weui-btn_plain'] {
+      padding: 7px;
+    }
+
+    &.weui-btn_mini {
+      padding: 3px;
+
+      &[class*=' weui-btn_plain'] {
+        padding: 1px;
+      }
+    }
+  }
+}

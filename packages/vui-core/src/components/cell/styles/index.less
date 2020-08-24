@@ -1,0 +1,90 @@
+@import "./_variables.less";
+@import "../../../styles/weui/widget/weui-cell/weui-cell_global.less";
+@import "../../../styles/weui/widget/weui-cell/weui-access.less";
+@import "../../../styles/weui/widget/weui-loading/weui-loading.less";
+
+.vui-cell {
+  &--active {
+    tap-highlight-color: transparent;
+    user-select: none;
+  }
+
+  &--no-border-intent {
+    &::before {
+      left: 0;
+    }
+  }
+
+  &--disabled {
+    .vui-cell__label {
+      color: #b2b2b2;
+    }
+    &.weui-cell_access .weui-cell__ft:after {
+      border-color: @cell-disabled-arrow-color;
+    }
+  }
+
+  &--primary {
+    flex: 1;
+  }
+
+  &__label {
+    color: @cell-label-color;
+    display: block;
+    word-wrap: break-word;
+    word-break: break-all;
+
+    &--justify {
+      height: unit(@weuiCellLineHeight, em);
+      &&:after {
+        content: ".";
+        display: inline-block;
+        width: 100%;
+        overflow: hidden;
+        height: 0;
+      }
+    }
+  }
+
+  &__ft {
+    &--align-left {
+      text-align: left;
+    }
+
+    &--arrow {
+      &-transition {
+        &::after {
+          transition: transform 300ms;
+        }
+      }
+
+      &-down:after {
+        transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0) rotate(90deg) !important;
+      }
+
+      &-up:after {
+        transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0) rotate(-90deg) !important;
+      }
+    }
+  }
+
+  /*
+  * CellSitch
+  */
+  &_switch {
+    &.weui-cell_switch {
+      padding-top: 6px;
+      padding-bottom: 6px;
+    }
+
+    &--mini.weui-cell_switch {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+    .weui-cell__ft {
+      font-size: 0;
+      position: relative;
+    }
+  }
+}

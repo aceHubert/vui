@@ -1,0 +1,63 @@
+@import './_variables.less';
+@import '../../../styles/weui/widget/weui-searchbar/weui-searchbar.less';
+
+.vui-search-bar {
+  width: 100%;
+  &--fixed {
+    max-height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: rgba(255, 255, 255, 1);
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    z-index: 5;
+  }
+
+  .weui-search-bar {
+    padding: 10px 16px;
+    color: @search-bar-font-color;
+    background-color: @search-bar-bg-color;
+
+    &__form,
+    &__label {
+      border-radius: 99px;
+      background-color: @search-bar-inner-bg-color;
+    }
+
+    &__box {
+      padding-left: 32px;
+
+      .weui-icon-search {
+        margin-top: -12px;
+        width: 24px;
+        height: 24px;
+      }
+
+      .weui-icon-clear {
+        box-sizing: initial;
+      }
+    }
+
+    &__search-btn {
+      margin-left: 8px;
+      line-height: 28px;
+      color: #576b95;
+      white-space: nowrap;
+      background-color: transparent;
+      border-style: none;
+      outline: none;
+    }
+
+    &__cancel-btn {
+      font-size: 14px;
+    }
+  }
+
+  &-result {
+    margin-top: 0 !important;
+    font-size: 14px;
+    overflow-y: auto;
+  }
+}

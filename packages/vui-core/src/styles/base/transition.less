@@ -1,0 +1,47 @@
+// fade
+.vui-transition {
+  &-fade-enter,
+  &-fade-leave-active {
+    opacity: 0;
+  }
+
+  &-fade-leave-active,
+  &-fade-enter-active {
+    transition: opacity 300ms;
+  }
+
+  // slide
+  &-slide-from-top-enter,
+  &-slide-from-top-leave-active {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-100%) !important;
+  }
+  &-slide-from-bottom-enter,
+  &-slide-from-bottom-leave-active {
+    opacity: 0;
+    transform: translateX(-50%) translateY(100%) !important;
+  }
+  &-slide-from-top-enter-active,
+  &-slide-from-top-leave-active,
+  &-slide-from-bottom-enter-active,
+  &-slide-from-bottom-leave-active {
+    transition: all 400ms cubic-bezier(0.36, 0.66, 0.04, 1);
+  }
+
+  // actionsheet
+  &-actionsheet-mask,
+  &-android-actionsheet {
+    &-enter,
+    &-leave-active {
+      opacity: 0;
+    }
+  }
+
+  &-actionsheet-mask,
+  &-android-actionsheet {
+    &-leave-active,
+    &-enter-active {
+      transition: opacity 300ms !important;
+    }
+  }
+}

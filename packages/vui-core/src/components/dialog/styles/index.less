@@ -1,0 +1,41 @@
+@import './_variables.less';
+@import '../../../styles/weui/widget/weui-tips/weui-dialog.less';
+
+html.vui-model-open {
+  overflow-y: hidden !important;
+}
+
+.vui-dialog {
+  z-index: @dialog-z-index;
+
+  .weui-dialog__hd {
+    padding: @dialog-header-padding;
+  }
+
+  .weui-dialog__bd {
+    font-size: @dialog-content-font-size;
+    flex: 1 1 auto; // IE bug fix
+  }
+
+  .weui-dialog__btn {
+    &_primary {
+      color: @dialog-button-text-primary-color;
+    }
+    &_default {
+      color: @dialog-button-text-default-color;
+    }
+  }
+}
+
+.vui-confirm {
+  &__input {
+    padding: 4px 5px;
+    width: 100%;
+    font-size: 16px;
+    border: 1px solid #dedede;
+    border-radius: 5px;
+    box-sizing: border-box;
+    appearance: none;
+    outline: none;
+  }
+}

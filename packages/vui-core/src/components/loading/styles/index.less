@@ -1,0 +1,18 @@
+@import './_variables.less';
+@import '../../../styles/weui/widget/weui-tips/weui-mask.less';
+@import '../../../styles/weui/widget/weui-tips/weui-toast.less';
+@import '../../../styles/weui/widget/weui-loading/weui-loading.less';
+
+.vui-loading {
+  .weui-toast {
+    z-index: @loading-z-index;
+  }
+
+  &.vux-transition-fade-enter,
+  &.vux-transition-fade-leave-active,
+  &.vux-transition-fade-leave-active,
+  &.vux-transition-fade-enter-active {
+    position: relative;
+    z-index: 1;
+  }
+}

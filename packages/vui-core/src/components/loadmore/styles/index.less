@@ -1,0 +1,20 @@
+@import "../../../styles/base/fn.less";
+@import "../../../styles/weui/widget/weui-tips/weui-loadmore.less";
+
+.vui-loadmore.weui-loadmore_line {
+  display: flex;
+  border-top: 0;
+
+  &::before,
+  &::after {
+    content: "";
+    position: relative;
+    top: -1px;
+    flex: 1;
+    border-top: 1px solid #e5e5e5;
+  }
+
+  & .weui-loadmore__tips {
+    background-color: transparent;
+  }
+}

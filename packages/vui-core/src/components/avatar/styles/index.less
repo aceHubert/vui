@@ -1,0 +1,44 @@
+@import "./_variables.less";
+
+.vui-avatar {
+  display: inline-block;
+  box-sizing: border-box;
+  text-align: center;
+  overflow: hidden;
+  color: #fff;
+  background-color: @avatar-bg-color;
+  border: 0 solid @avatar-border-color;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+
+  & > img {
+    height: 100%;
+    display: block;
+  }
+
+  &--circle {
+    border-radius: 50%;
+  }
+
+  &--square {
+    border-radius: 4px;
+  }
+
+  &__label {
+    display: block;
+    color: @avatar-label-color;
+    font-size: 14px;
+    line-height: 1.125;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+    &--right {
+      margin-left: 10px;
+      display: inline-block;
+      align-self: center;
+    }
+  }
+}

@@ -1,0 +1,111 @@
+@import './_variables.less';
+
+.vui-tab {
+  display: flex;
+  background-color: #fff;
+  height: 44px;
+  position: relative;
+
+  /*start scrollable 滚动条隐藏*/
+  &-warp {
+    position: relative;
+    padding-top: 44px;
+  }
+
+  &-container {
+    height: 44px;
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    position: absolute;
+  }
+  /*end*/
+
+  &__item {
+    display: block;
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background: linear-gradient(
+        180deg,
+        #e5e5e5,
+        #e5e5e5,
+        rgba(229, 229, 229, 0)
+      )
+      bottom left no-repeat;
+    background-size: 100% 1px;
+    font-size: 14px;
+    text-align: center;
+    line-height: 44px;
+    color: #666;
+    cursor: default;
+
+    &--active {
+      color: @color-primary;
+      border-bottom: 3px solid @color-primary;
+    }
+
+    &--disabled {
+      color: #ddd;
+    }
+  }
+
+  &__ink-bar {
+    position: absolute;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: @color-primary;
+    text-align: center;
+
+    &-inner {
+      display: block;
+      background-color: @color-primary;
+      margin: auto;
+      height: 100%;
+      transition: width 0.3s cubic-bezier(0.35, 0, 0.25, 1);
+    }
+
+    &--transition-forward {
+      transition: right @effect-duration @easing-in-out,
+        left @effect-duration @easing-in-out @effect-duration * 0.3;
+    }
+    &--transition-backward {
+      transition: right @effect-duration @easing-in-out @effect-duration * 0.3,
+        left @effect-duration @easing-in-out;
+    }
+  }
+
+  &--bar-top &__ink-bar {
+    top: 0;
+  }
+
+  // no animation
+  &--no-animate &__item-active {
+    background: 0 0;
+  }
+
+  // scrollable
+  &--scrollable {
+    overflow-y: hidden;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 17px;
+    box-sizing: content-box;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &--scrollable &__item {
+    flex: 0 0 22%;
+  }
+
+  &--scrollable &__ink-bar {
+    bottom: 17px;
+    position: absolute;
+  }
+}

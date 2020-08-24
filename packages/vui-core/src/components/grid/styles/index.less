@@ -1,0 +1,32 @@
+@import "../../cell/styles/_variables.less";
+@import "../../../styles/weui/widget/weui-grid/weui-grid.less";
+
+.vui-grids {
+  background-color: @cell-bg-color;
+
+  &--no-left-border {
+    &::after {
+      content: none;
+    }
+  }
+
+  &--no-top-border {
+    &::before {
+      content: none;
+    }
+  }
+}
+
+.vui-grid {
+  &--no-right-border {
+    &::before {
+      content: none;
+    }
+  }
+
+  &--no-bottom-border {
+    &::after {
+      content: none;
+    }
+  }
+}

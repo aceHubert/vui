@@ -1,0 +1,80 @@
+{
+  "name": "vui",
+  "version": "0.0.1",
+  "description": "vui project",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aceHubert/vue-async.git"
+  },
+  "scripts": {
+    "serve": "lerna run serve --sort --parallel",
+    "serve:dome":"yarn build && yarn workspace demo serve",
+    "build": "lerna run build:dist --sort --stream --scope=@vui/*",
+    "clean": "lerna clean --yes",
+    "lint": "lerna run lint --parallel --stream",
+    "lint:fix": "lerna run lint:fix --parallel",
+    "prettier": "node ./scripts/prettier.js",
+    "prettier:all": "node ./scripts/prettier.js write",
+    "changelog": "node ./scripts/genChangelog.js",
+    "commit": "git-cz",
+    "prepublishOnly": "yarn install && yarn changelog && yarn build",
+    "release": "lerna publish"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-lerna-changelog"
+    }
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.10.4",
+    "@babel/core": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "@commitlint/cli": "^8.3.4",
+    "@commitlint/config-conventional": "^8.3.4",
+    "@types/jest": "^24.0.23",
+    "@types/node": "^12.12.14",
+    "@typescript-eslint/eslint-plugin": "^2.12.0",
+    "@typescript-eslint/parser": "^2.12.0",
+    "autoprefixer": "^9.8.5",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^24.9.0",
+    "child_process": "^1.0.2",
+    "commitizen": "^4.0.3",
+    "concurrently": "^5.1.0",
+    "core-js": "^3.6.5",
+    "cross-env": "^6.0.3",
+    "cz-lerna-changelog": "^2.0.2",
+    "eslint": "^6.1.0",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-jest": "^23.8.2",
+    "eslint-plugin-local": "^1.0.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "glob-gitignore": "^1.0.14",
+    "husky": ">=1",
+    "jest": "^24.9.0",
+    "lerna": "^3.20.2",
+    "lerna-changelog": "^1.0.1",
+    "lint-staged": "^10.2.0",
+    "parcel-bundler": "^1.12.4",
+    "postcss-custom-properties": "^9.1.1",
+    "prettier": "^2.0.5",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^24.2.0",
+    "typescript": "~3.8.3",
+    "util": "^0.12.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && yarn lerna run test",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "demo"
+    ]
+  }
+}

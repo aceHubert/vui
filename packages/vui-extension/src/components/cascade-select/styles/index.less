@@ -1,0 +1,171 @@
+@import '../../../styles/fn';
+
+.vui-cascade-select {
+  width: 100%;
+
+  .placeholder {
+    color: #999;
+    line-height: 30px;
+  }
+
+  .selects {
+    display: flex;
+  }
+
+  .select {
+    position: relative;
+
+    &__item {
+      padding: 0 5px;
+      width: auto !important;
+      height: 30px;
+      line-height: 30px;
+      font-size: 14px;
+      border: none;
+      position: relative;
+      background: transparent;
+      appearance: none;
+      flex: 0 0 100px;
+    }
+  }
+
+  .step {
+    padding: 10px;
+    position: relative;
+
+    &__hd,
+    &__bd {
+      .labels {
+        margin: 0 -10px;
+        text-align: left;
+      }
+
+      .label {
+        &__item {
+          font-size: 14px;
+          display: inline-block;
+          cursor: pointer;
+        }
+      }
+    }
+
+    &__hd {
+      margin-bottom: 5px;
+      text-align: center;
+
+      .labels {
+        padding: 0;
+        margin: 10px 0 0;
+        margin-right: 20px;
+        height: 25px;
+        border-bottom: 2px solid @weuiColorPrimary;
+        white-space: nowrap;
+        overflow: visible;
+        *overflow: hidden;
+        cursor: default;
+      }
+
+      .label {
+        &__item {
+          padding: 1px 16px 0 8px;
+          height: 23px;
+          line-height: 21px;
+          color: @weuiTextColorTitle;
+          background-color: #fff;
+          border: 1px solid #e1e1e1;
+          border-bottom: none;
+          box-sizing: border-box;
+          vertical-align: top;
+          position: relative;
+
+          &::after {
+            content: '';
+            margin-left: 5px;
+            .setArrow(down, 5px, 5px, 1px);
+            vertical-align: baseline;
+          }
+
+          & + .label__item {
+            margin-left: 2px;
+          }
+
+          &--active {
+            margin-bottom: -2px;
+            height: 25px;
+            border-width: 2px;
+            border-color: @weuiColorPrimary;
+          }
+        }
+      }
+    }
+
+    &__bd {
+      .label {
+        &__item {
+          padding: 6px 10px;
+          height: 23px;
+          line-height: 23px;
+          color: @weuiLinkColorDefault;
+          min-width: 25%;
+        }
+      }
+    }
+  }
+
+  .actionsheet {
+    .weui-actionsheet {
+      &__title {
+        padding-top: 10px;
+        padding-left: 16px;
+        height: auto !important;
+      }
+
+      &__menu {
+        max-height: 360px;
+        overflow-y: auto;
+      }
+
+      &__cell {
+        padding: 6px 16px;
+        font-size: 14px;
+        text-align: left;
+      }
+    }
+
+    &__close {
+      position: absolute;
+      right: 10px;
+      top: 6px;
+
+      .weui-icon-close {
+        width: 16px;
+        height: 16px;
+        color: #999;
+      }
+    }
+
+    &__input {
+      width: 100%;
+      cursor: default;
+      outline: none;
+    }
+
+    &__labels {
+      margin: 10px -10px 0;
+      text-align: left;
+      font-size: 14px;
+    }
+
+    &-label {
+      &__item {
+        padding: 6px 10px;
+        display: inline-block;
+        cursor: default;
+
+        &--active {
+          color: @weuiColorPrimary;
+        }
+      }
+    }
+  }
+}

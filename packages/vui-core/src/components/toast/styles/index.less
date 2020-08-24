@@ -1,0 +1,44 @@
+@import './_variables.less';
+@import '../../../styles/weui/widget/weui-tips/weui-mask.less';
+@import '../../../styles/weui/widget/weui-tips/weui-toast.less';
+
+.vui-toast {
+  font-size: 16px;
+
+  .weui-toast {
+    height: initial;
+    min-height: 7.6em;
+    z-index: @toast-z-index;
+
+    .weui-toast__content {
+      font-size: @toast-content-font-size;
+    }
+  }
+
+  &--text {
+    height: auto !important;
+    .weui-toast__content {
+      margin: 0;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border-radius: 15px;
+    }
+  }
+
+  &--position {
+    &-top {
+      top: @toast-position-top-offset;
+    }
+
+    &-middle {
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%);
+    }
+
+    &-bottom {
+      top: auto;
+      bottom: @toast-position-bottom-offset;
+      transform: translateX(-50%);
+    }
+  }
+}

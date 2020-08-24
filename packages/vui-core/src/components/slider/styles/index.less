@@ -1,0 +1,22 @@
+@import './_variables.less';
+@import '../../../styles/weui/widget/weui-slider/weui-slider.less';
+
+.vui-slider {
+  &--disabled {
+    .weui-slider__inner {
+      opacity: @slider-disabled-opacity;
+    }
+  }
+
+  .weui-slider__inner {
+    background-color: @slider-bar-default-color;
+  }
+
+  .weui-slider__track {
+    background-color: @slider-bar-active-color;
+  }
+
+  .weui-slider-box__value {
+    margin-left: 0;
+  }
+}

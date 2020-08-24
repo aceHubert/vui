@@ -1,0 +1,46 @@
+@import './mixin/setLine.less';
+@import '../weui/base/mixin/setOnepx.less';
+
+
+.vui-1px, .vui-1px-t, .vui-1px-b, .vui-1px-tb, .vui-1px-l, .vui-1px-r {
+  position: relative;
+}
+
+.vui-1px {
+  &:before {
+    .setLine();
+  }
+}
+
+.vui-1px-t {
+  &:before {
+    .setTopLine();
+  }
+}
+
+.vui-1px-b {
+  &:after {
+    .setBottomLine();
+  }
+}
+
+.vui-1px-tb {
+  &:before {
+    .setTopLine();
+  }
+  &:after {
+    .setBottomLine();
+  }
+}
+
+.vui-1px-l {
+  &:before {
+    .setLeftLine();
+  }
+}
+
+.vui-1px-r {
+  &:after {
+    .setRightLine();
+  }
+}
