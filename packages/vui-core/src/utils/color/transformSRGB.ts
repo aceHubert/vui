@@ -1,5 +1,5 @@
-import { ColorInt, XYZ } from '../color-utils';
-import { clamp } from '../../utils/helpers';
+import { ColorInt, XYZ } from '../colorUtils';
+import { clamp } from '../helpers';
 
 // For converting XYZ to sRGB
 const srgbForwardMatrix = [

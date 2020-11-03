@@ -1,0 +1,27 @@
+@import '../../../styles/weui/widget/weui-tips/weui-half-screen-dialog';
+
+html.vui-model-open {
+  overflow-y: hidden !important;
+}
+
+.vui-half-screen-dialog {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  z-index: @dialog-z-index;
+
+  & .weui-half-screen-dialog {
+    &__hd,
+    &__ft {
+      flex: 0 0 auto;
+    }
+
+    &__hd,
+    &__ft {
+      padding: 0 calc(24px ~'+ constant(safe-area-inset-right)') constant(safe-area-inset-bottom)
+        calc(24px ~'+ constant(safe-area-inset-left)');
+      padding: 0 calc(24px ~'+ env(safe-area-inset-right)') env(safe-area-inset-bottom)
+        calc(24px ~'+ env(safe-area-inset-left)');
+    }
+  }
+}

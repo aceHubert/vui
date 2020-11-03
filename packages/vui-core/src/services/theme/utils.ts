@@ -1,6 +1,6 @@
-import { colorToInt, intToHex, colorToHex, ColorInt } from '../../utils/color-utils';
-import * as sRGB from '../../utils/color/transformSRGB';
-import * as LAB from '../../utils/color/transformCIELAB';
+import { colorToInt, intToHex, colorToHex, ColorInt } from '@/utils/colorUtils';
+import * as sRGB from '@/utils/color/transformSRGB';
+import * as LAB from '@/utils/color/transformCIELAB';
 
 // Types
 import { VuiThemeItem, VuiParsedTheme } from '@vui/core/types/services/theme';

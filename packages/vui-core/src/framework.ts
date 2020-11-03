@@ -30,7 +30,6 @@ export default class Vui {
     this.use(services.Theme);
   }
 
-  // Called on the new vuetify instance
   // bootstrap in install beforeCreate
   // Exposes ssrContext if available
   init(root: Vue, ssrContext?: object) {

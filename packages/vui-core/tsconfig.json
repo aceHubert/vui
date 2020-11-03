@@ -3,12 +3,15 @@
   "compilerOptions": {
     // parcel not support extends, set target to be 'esnext' and let bable to transfer js code
     "target": "ESNext",
-    "baseUrl": "src",
+    "baseUrl": ".",
     "outDir": "_dist",
-    "declaration": true,
+    // "declaration": true,
     // "declarationDir": "types",
-    // "paths": {},
+    "paths": {
+      "@/*": ["src/*"]
+    },
     "jsx": "preserve",
+    "jsxFactory": "VueTsxSupport",
     "composite": true
   },
   "include": ["src/**/*", "types"],
